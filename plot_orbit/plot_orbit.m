@@ -5,9 +5,9 @@ format longG
 
 addpath('time')
 
-[t0, dt, r_soho, v_soho] = extract_horizons('./soho_2005.txt');
-[~, ~, r_sun, ~] = extract_horizons('./sun_2005.txt');
-[~, ~, r_moon, ~] = extract_horizons('./moon_2005.txt');
+[t, r_soho, v_soho] = extract_horizons('./soho_2005.txt');
+[~, r_sun, ~] = extract_horizons('./sun_2005.txt');
+[~, r_moon, ~] = extract_horizons('./moon_2005.txt');
 
 %t = date2jd([1996, 2, 14, 0, 0, 0])
 

@@ -1,4 +1,4 @@
-function[t0, dt, r, v] = extract_horizons(filename)
+function[t, r, v] = extract_horizons(filename)
 	%% EXTRACT NASA HORIZON VECTOR TABLE {r, v}
 	%% ENABLE CSV IN HORIZONS OPTION
 	% t0 start time in Julian Day Number, Barycentric Dynamical Time
@@ -31,7 +31,4 @@ function[t0, dt, r, v] = extract_horizons(filename)
 		tline = fgetl(fid);
 	end
 	fclose(fid);
-
-	dt = (t - t(1)) * 60 * 60 * 24; %time output of horizons is in julian days
-	t0 = t(1);
 end
