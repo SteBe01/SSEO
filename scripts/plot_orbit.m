@@ -4,11 +4,12 @@ clear, clc
 close all
 
 format longG
-addpath('time')
+addpath('./utils/time')
+addpath('./utils')
 
-[t, r_soho, v_soho] = extract_horizons('./horizon/soho_2005.txt');
-[~, r_sun, ~] = extract_horizons('./horizon/sun_2005.txt');
-[~, r_moon, ~] = extract_horizons('./horizon/moon_2005.txt');
+[t, r_soho, v_soho] = extract_horizons('../horizons_data/full_earthcentre/soho.txt');
+[~, r_sun, ~] = extract_horizons('../horizons_data/full_earthcentre/sun.txt');
+[~, r_moon, ~] = extract_horizons('../horizons_data/full_earthcentre/moon.txt');
 
 % return
 
