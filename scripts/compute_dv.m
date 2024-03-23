@@ -7,20 +7,25 @@ addpath('./utils/');
 
 options = odeset('RelTol', 1e-13, 'AbsTol', 1e-14);
 
-%xcc burn
-[t, r_soho, v_soho] = extract_horizons('../horizons_data/xcc_suncentre/soho.txt');
-[~, r_earth, v_earth] = extract_horizons('../horizons_data/xcc_suncentre/earth.txt');
-[~, r_moon, v_moon] = extract_horizons('../horizons_data/xcc_suncentre/moon.txt');
+%xcc burn 1
+% [t, r_soho, v_soho] = extract_horizons('../horizons_data/xcc1_suncentre/soho_mcc1.txt');
+% [~, r_earth, v_earth] = extract_horizons('../horizons_data/xcc1_suncentre/earth_mcc1.txt');
+% [~, r_moon, v_moon] = extract_horizons('../horizons_data/xcc1_suncentre/moon_mcc1.txt');
+
+%xcc burn 2
+% [t, r_soho, v_soho] = extract_horizons('../horizons_data/xcc_suncentre/soho.txt');
+% [~, r_earth, v_earth] = extract_horizons('../horizons_data/xcc_suncentre/earth.txt');
+% [~, r_moon, v_moon] = extract_horizons('../horizons_data/xcc_suncentre/moon.txt');
 
 %insertion in halo orbit
-%[t, r_soho, v_soho] = extract_horizons('../horizons_data/haloins_suncentre/soho.txt');
-%[~, r_earth, v_earth] = extract_horizons('../horizons_data/haloins_suncentre/earth.txt');
-%[~, r_moon, v_moon] = extract_horizons('../horizons_data/haloins_suncentre/moon.txt');
+% [t, r_soho, v_soho] = extract_horizons('../horizons_data/haloins_suncentre/soho.txt');
+% [~, r_earth, v_earth] = extract_horizons('../horizons_data/haloins_suncentre/earth.txt');
+% [~, r_moon, v_moon] = extract_horizons('../horizons_data/haloins_suncentre/moon.txt');
 
 %trim maneuver
-%[t, r_soho, v_soho] = extract_horizons('../horizons_data/trim_suncentre/soho.txt');
-%[~, r_earth, v_earth] = extract_horizons('../horizons_data/trim_suncentre/earth.txt');
-%[~, r_moon, v_moon] = extract_horizons('../horizons_data/trim_suncentre/moon.txt');
+[t, r_soho, v_soho] = extract_horizons('../horizons_data/trim_suncentre/soho.txt');
+[~, r_earth, v_earth] = extract_horizons('../horizons_data/trim_suncentre/earth.txt');
+[~, r_moon, v_moon] = extract_horizons('../horizons_data/trim_suncentre/moon.txt');
 
 %around 1 year of orbit mainteinance
 %[t, r_soho, v_soho] = extract_horizons('../horizons_data/maintain_suncentre/soho.txt');
