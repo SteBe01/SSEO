@@ -1,4 +1,4 @@
-function [rr_t, vv_t, rr_bi, vvf] = TBP2(M, m, rr0, vv0, rr1, vv1, t, dt)
+function [rr_t, vv_t, rr_bi, vvf] = TBP2_2(M, m, rr0, vv0, rr1, vv1, t, dt)
 %TBP Summary of this function goes here
 % M : mass of the Sun [kg]
 % m : mass of the Earth [kg]
@@ -75,14 +75,14 @@ vvf=(Ri* vv_b(end, :)')';
 
 rzi(c)=NaN;
 C=linspace(0, 100, c);
-plot3(rxi, ryi, rzi, 'color', "#EDB120", HandleVisibility="off");
-% p = patch(rxi, ryi, rzi, C, 'FaceColor','none','EdgeColor', 'interp', 'linewidth', 1, DisplayName='SOHO'); %use patch   %'FaceColor','none','EdgeColor','interp'
+plot3(rxi, ryi, rzi, 'color', "#EDB120", DisplayName='SOHO trajectory');
+% p = patch(rxi, ryi, rzi, C, 'FaceColor','none','EdgeColor', 'interp', 'linewidth', 1, HandleVisibility='off'); %use patch   %'FaceColor','none','EdgeColor','interp'
 % CB=colorbar();                                                        %'Direction', 'reverse'
-% CB.Label.String = 'ToF% in the orbit';
+% CB.Label.String = 'ToF% in the trajectory';
 oldcmap = colormap('cool');                                            %colormap(p, hot); %autumn(100)
 colormap( flipud(oldcmap) );
 hold on
-
+% plot3(rxi(1), ryi(1), rzi(1), '.', 'MarkerSize', 15, MarkerEdgeColor='g', HandleVisibility='off'); %, DisplayName='Starting Point'
 hold on
 R_rif=6378;       %Earth radius [km]
 % EarthSphere1(R_rif); %plot of the Earth
@@ -91,8 +91,7 @@ hold on
 f = @(b) 1+(mu/MU)/((1-b)*b^2)-1/(1-b)^3 ;
 b=fzero(f, [1e-6, 1-1e-6]); %ratio between distance Earth-L1 and distance Earth-Sun (solution of Lagrange problem)
 xLag1=norm(rE(1, 1:3))*(b);%[km] L1 position wrt to Earth
-plot3(xLag1, 0, 0, '.', 'MarkerSize', 15, MarkerEdgeColor='b', DisplayName='L1 approx. point'); % HandleVisibility='off',
-plot3(rxi(1), ryi(1), rzi(1), '.', 'MarkerSize', 15, MarkerEdgeColor='r', DisplayName='Earth'); %, DisplayName='Starting Point'
+% plot3(xLag1, 0, 0, '.', 'MarkerSize', 15, MarkerEdgeColor='b', DisplayName='L1 approx. point'); % HandleVisibility='off',
 hold on
 
 R_rif=1e5;
@@ -135,8 +134,7 @@ rEz=rE(:,3); %z coordinates of the position vector (column)
 %plot of body wrt Sun
 rz(c)=NaN;
 C=linspace(0, 100, c);
-plot3(rx, ry, rz);
-% p = patch(rx, ry, rz, C, 'FaceColor','none','EdgeColor', 'interp', 'linewidth', 1, DisplayName='SOHO trajectory'); %use patch   %'FaceColor','none','EdgeColor','interp'
+% p = patch(rx, ry, rz, C, 'FaceColor','none','EdgeColor', 'interp', 'linewidth', 1, DisplayName='SOHO'); %use patch   %'FaceColor','none','EdgeColor','interp'
 % CB=colorbar();                                                        %'Direction', 'reverse'
 % CB.Label.String = 'ToF% in the orbit';
 oldcmap = colormap('hot');                                            %colormap(p, hot); %autumn(100)
