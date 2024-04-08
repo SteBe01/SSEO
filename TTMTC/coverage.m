@@ -5,7 +5,7 @@ close all
 
 addpath(genpath('Functions'));
 
-n_days = 4;
+n_days = 1;
 deltaTimeAq = 0;                        % used for "locking" the S/C
 
 Canberra_gmat = readmatrix("Canberra.csv");
@@ -40,14 +40,30 @@ Madrid_times_tot = onesZeros(Madrid_times, timeSpan, deltaTimeAq);
 
 [Canberra_times_tot, Goldstone_times_tot, Madrid_times_tot] = stripVect(Canberra_times_tot, Goldstone_times_tot, Madrid_times_tot);
 
-plot(Canberra_times_tot)
+plot(Canberra_times_tot, LineWidth=2, HandleVisibility="off")
 hold on
-plot(Goldstone_times_tot)
-plot(Madrid_times_tot)
+plot(Goldstone_times_tot, LineWidth=2, HandleVisibility="off")
+plot(Madrid_times_tot, LineWidth=2, HandleVisibility="off")
 
-new_vect = Canberra_times_tot + Goldstone_times_tot + Madrid_times_tot;
-figure
-plot(new_vect)
+scatter(0,0,nan,"filled",MarkerFaceColor="#0072BD",MarkerEdgeColor="#0072BD")
+scatter(0,0,nan,"filled",MarkerFaceColor="#D95319",MarkerEdgeColor="#D95319")
+scatter(0,0,nan,"filled",MarkerFaceColor="#EDB120",MarkerEdgeColor="#EDB120")
+
+% legend("Canberra", "Goldstone", "Madrid", Orientation="horizontal",Location="northoutside")
+legend("Canberra", "Goldstone", "Madrid")
+set(gcf,'position',[600,300,420,140])
+
+% new_vect = Canberra_times_tot + Goldstone_times_tot + Madrid_times_tot;
+% figure
+% plot(new_vect)
+
+totLen = length(Canberra_times_tot);
+set(gca,'XTick',0:(totLen/(3*n_days)):totLen);
+set(gca,'XTickLabel',["7:30" "15:30" "23:30"]);
+xlabel("Hour UTC", Interpreter='latex', FontSize=10)
+set(gca,'YTick', [0 1]);
+set(gca,'YTickLabel', [0 1]);
+ylabel("Visibility", Interpreter='latex', FontSize=10)
 
 
 %% check (run first the other section)
@@ -60,7 +76,6 @@ Canberra_times_tot2 = onesZeros(Canberra_times, timeSpan, 5);
 plot(Canberra_times_tot1)
 hold on
 plot(Canberra_times_tot2)
-
 
 
 %% functions
