@@ -40,6 +40,7 @@ Madrid_times_tot = onesZeros(Madrid_times, timeSpan, deltaTimeAq);
 
 [Canberra_times_tot, Goldstone_times_tot, Madrid_times_tot] = stripVect(Canberra_times_tot, Goldstone_times_tot, Madrid_times_tot);
 
+figure
 plot(Canberra_times_tot, LineWidth=2, HandleVisibility="off")
 hold on
 plot(Goldstone_times_tot, LineWidth=2, HandleVisibility="off")
@@ -65,6 +66,9 @@ set(gca,'YTick', [0 1]);
 set(gca,'YTickLabel', [0 1]);
 ylabel("Visibility", Interpreter='latex', FontSize=10)
 
+%%
+
+plot2pdf ('TTMTC')
 
 %% check (run first the other section)
 
