@@ -1,0 +1,17 @@
+﻿EPS;;;;;;;
+Components;Number;Code (words);Data (words);Typical KIPS;Typical frequency;Acquisition Frequency;KIPS
+Solar panels;2;0;0;0;2;0;0
+Batteries;2;0;0;0;2;0;0
+Cables & Harness;1;0;0;0;0,01;0;0
+Power voltage control;1;1200;500;5;1;0,1;0,5
+Power current control;1;1200;500;5;1;0,1;0,5
+;0;0;0;0;10;0;0
+;0;0;0;0;10;0;0
+;0;0;0;0;10;0;0
+;0;0;0;0;10;0;0
+;0;0;0;0;0,5;0;0
+;0;0;0;0;1;0;0
+;;Total Code;Total Data;;;;Total KIPS
+;;2400;1000;;;;1
+;;Margined Code;Margined Data;;;;Margined KIPS
+;;12000;5000;;;;5

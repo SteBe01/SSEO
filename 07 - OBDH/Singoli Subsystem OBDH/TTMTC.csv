@@ -1,0 +1,16 @@
+﻿TTMTC;;;;;;;
+Components;Number;Code (words);Data (words);Typical KIPS;Typical frequency;Acquisition Frequency;KIPS
+S-band HGA;1;0;0;0;2;0;0
+S-band LGA;2;0;0;0;2;0;0
+Transponder 2 (Uplink);1;1000;4000;7;10;10;7
+Transponder 2 (Downlink);1;1000;2500;3;10;10;3
+;0;0;0;0;10;0;0
+;0;0;0;0;10;0;0
+;0;0;0;0;10;0;0
+;0;0;0;0;10;0;0
+;0;0;0;0;0,5;0;0
+;0;0;0;0;1;0;0
+;;Total Code;Total Data;;;;Total KIPS
+;;2000;6500;;;;10
+;;Margined Code;Margined Data;;;;Margined KIPS
+;;10000;32500;;;;50

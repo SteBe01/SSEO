@@ -1,0 +1,17 @@
+﻿PS;;;;;;;
+Components;Number;Code (words);Data (words);Typical KIPS;Typical frequency;Acquisition Frequency;KIPS
+Tank;1;0;0;0;2;0;0
+Main engine;1;1200;1500;5;0,1;0,1;5
+Tank control valve;2;800;1500;3;0,1;0,1;3
+Tank pressure sensor;1;800;1500;3;0,1;0,1;3
+;0;0;0;0;1;0;0
+;0;0;0;0;10;0;0
+;0;0;0;0;10;0;0
+;0;0;0;0;10;0;0
+;0;0;0;0;10;0;0
+;0;0;0;0;0,5;0;0
+;0;0;0;0;1;0;0
+;;Total Code;Total Data;;;;Total KIPS
+;;3600;6000;;;;14
+;;Margined Code;Margined Data;;;;Margined KIPS
+;;18000;30000;;;;70

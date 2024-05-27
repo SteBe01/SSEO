@@ -1,0 +1,17 @@
+﻿TCS;;;;;;;
+Components;Number;Code (words);Data (words);Typical KIPS;Typical frequency;Acquisition Frequency;KIPS
+Thermal control;1;800;1500;3;0,1;0,1;3
+;0;0;0;0;2;0;0
+;0;0;0;0;0,01;0;0
+;0;0;0;0;10;0;0
+;0;0;0;0;1;0;0
+;0;0;0;0;10;0;0
+;0;0;0;0;10;0;0
+;0;0;0;0;10;0;0
+;0;0;0;0;10;0;0
+;0;0;0;0;0,5;0;0
+;0;0;0;0;1;0;0
+;;Total Code;Total Data;;;;Total KIPS
+;;800;1500;;;;3
+;;Margined Code;Margined Data;;;;Margined KIPS
+;;4000;7500;;;;15
